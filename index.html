@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Busan - 외국인이 사랑한 부산 명소 베스트 5</title>
+  <meta name="description" content="외국인 관광객이 부산에 오면 반드시 방문하는 필수 명소 5선 가이드. 감천문화마을, 해운대 블루라인파크, 해동용궁사, 광안대교, 자갈치시장 완벽 가이드">
+  
+  <!-- Favicon & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <i class="fa-solid fa-water"></i>
+        <span>BUSAN<strong>VIBES</strong></span>
+      </a>
+
+      <nav class="nav-links" id="navMenu">
+        <a href="#about" class="nav-link active" data-ko="부산 소개" data-en="About Busan">부산 소개</a>
+        <a href="#attractions" class="nav-link" data-ko="명소 5선" data-en="Top 5 Sights">명소 5선</a>
+        <a href="#itinerary" class="nav-link" data-ko="추천 코스" data-en="Itinerary">추천 코스</a>
+        <a href="#tips" class="nav-link" data-ko="여행 팁" data-en="Travel Tips">여행 팁</a>
+        <a href="#map-section" class="nav-link" data-ko="위치 안내" data-en="Busan Map">위치 안내</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Bookmark Counter -->
+        <button class="action-btn bookmark-btn" id="openBookmarksBtn" title="찜한 명소 목록">
+          <i class="fa-solid fa-heart"></i>
+          <span class="bookmark-count" id="bookmarkCount">0</span>
+        </button>
+
+        <!-- Dark/Light Mode Toggle -->
+        <button class="action-btn" id="themeToggle" title="테마 전환" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Language Toggle -->
+        <button class="lang-toggle-btn" id="langToggle" aria-label="Toggle Language">
+          <span class="lang-badge active" id="langKO">KO</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-badge" id="langEN">EN</span>
+        </button>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Open navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="about">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-fire"></i>
+        <span data-ko="글로벌 여행자들의 최애 도시" data-en="Global Travelers' #1 Coastal City">글로벌 여행자들의 최애 도시</span>
+      </div>
+      <h1 class="hero-title" data-ko="세계가 반한 바다의 도시, 부산" data-en="Dynamic Busan: Where Ocean Meets Soul">세계가 반한 바다의 도시, 부산</h1>
+      <p class="hero-desc" data-ko="에메랄드빛 해변과 산비탈의 알록달록 예술 골목, 바닷가 절벽 사찰부터 활기찬 수산시장까지! 요즘 외국인 여행객들이 가장 열광하는 부산의 필수 명소 5곳을 만나보세요."
+         data-en="From pastel hillside villages and coastal cliff temples to retro sky capsules and bustling seafood markets—discover the 5 most-loved spots by international travelers in Busan.">
+        에메랄드빛 해변과 산비탈의 알록달록 예술 골목, 바닷가 절벽 사찰부터 활기찬 수산시장까지! 요즘 외국인 여행객들이 가장 열광하는 부산의 필수 명소 5곳을 만나보세요.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#attractions" class="btn btn-primary">
+          <i class="fa-solid fa-compass"></i>
+          <span data-ko="외국인 최애 명소 5선 보기" data-en="Explore Top 5 Spots">외국인 최애 명소 5선 보기</span>
+        </a>
+        <a href="#itinerary" class="btn btn-secondary">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span data-ko="추천 2일 여행 코스" data-en="2-Day Travel Course">추천 2일 여행 코스</span>
+        </a>
+      </div>
+
+      <!-- Quick Highlights Bar -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">#1</span>
+          <span class="stat-label" data-ko="한국 제2의 글로벌 해양수도" data-en="Korea's Maritime Capital">한국 제2의 글로벌 해양수도</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10M+</span>
+          <span class="stat-label" data-ko="글로벌 SNS 부산 뷰포인트 태그" data-en="Global Social Media Views">글로벌 SNS 부산 뷰포인트 태그</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label" data-ko="외국인 여행객 만족도 필수 코스" data-en="Must-Visit Recommendation">외국인 여행객 만족도 필수 코스</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <a href="#attractions" class="scroll-down" aria-label="Scroll down">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Top 5 Attractions Section -->
+  <section class="section attractions-section" id="attractions">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-subtitle" data-ko="GLOBAL TRAVELER PICKS" data-en="GLOBAL TRAVELER PICKS">GLOBAL TRAVELER PICKS</div>
+        <h2 class="section-title" data-ko="외국인이 부산에서 가장 사랑하는 5대 명소" data-en="Top 5 Must-Visit Attractions in Busan">외국인이 부산에서 가장 사랑하는 5대 명소</h2>
+        <p class="section-desc" data-ko="트립어드바이저, 인스타그램, 글로벌 여행 커뮤니티에서 가장 높은 평점과 방문율을 기록한 핵심 관광지만 모았습니다."
+           data-en="Curated from TripAdvisor ratings, Instagram virality, and global traveler survey data.">
+          트립어드바이저, 인스타그램, 글로벌 여행 커뮤니티에서 가장 높은 평점과 방문율을 기록한 핵심 관광지만 모았습니다.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">
+          <i class="fa-solid fa-layer-group"></i>
+          <span data-ko="전체 보기" data-en="All Sights">전체 보기</span>
+        </button>
+        <button class="filter-tab" data-filter="culture">
+          <i class="fa-solid fa-palette"></i>
+          <span data-ko="문화 & 예술" data-en="Culture & Art">문화 & 예술</span>
+        </button>
+        <button class="filter-tab" data-filter="ocean">
+          <i class="fa-solid fa-umbrella-beach"></i>
+          <span data-ko="오션 & 액티비티" data-en="Ocean & Fun">오션 & 액티비티</span>
+        </button>
+        <button class="filter-tab" data-filter="night">
+          <i class="fa-solid fa-moon"></i>
+          <span data-ko="야경 & 핫플" data-en="Night & Views">야경 & 핫플</span>
+        </button>
+        <button class="filter-tab" data-filter="food">
+          <i class="fa-solid fa-utensils"></i>
+          <span data-ko="로컬 미식" data-en="Food & Market">로컬 미식</span>
+        </button>
+      </div>
+
+      <!-- Attractions Grid -->
+      <div class="attractions-grid" id="attractionsGrid">
+
+        <!-- Attraction Card 1: 감천문화마을 -->
+        <article class="attraction-card" data-category="culture" data-id="1">
+          <div class="card-media">
+            <span class="rank-badge">01</span>
+            <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80" 
+                 alt="감천문화마을" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&w=800&q=80';">
+            <button class="like-btn" title="찜하기" aria-label="Bookmark Gamcheon Culture Village">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="category-tag culture">
+              <i class="fa-solid fa-palette"></i>
+              <span data-ko="문화 & 예술" data-en="Culture & Art">문화 & 예술</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-wrap">
+              <h3 class="card-title" data-ko="감천문화마을" data-en="Gamcheon Culture Village">감천문화마을</h3>
+              <span class="card-subtitle" data-ko="한국의 마추픽추 & 산토리니" data-en="The Machu Picchu of Korea">한국의 마추픽추 & 산토리니</span>
+            </div>
+            <p class="card-excerpt" data-ko="알록달록 파스텔톤 주택들이 계단식으로 어우러진 언덕 마을. 좁은 골목길마다 예술 벽화와 조형물이 가득하며, 어린 왕자와 사막여우 동상은 외국인들의 인생샷 성지입니다."
+               data-en="A vibrant hillside community of pastel-colored houses stacked terraced-style. Famous for its whimsical murals, boutique cafes, and the iconic statue of the Little Prince looking over the sea.">
+              알록달록 파스텔톤 주택들이 계단식으로 어우러진 언덕 마을. 좁은 골목길마다 예술 벽화와 조형물이 가득하며, 어린 왕자와 사막여우 동상은 외국인들의 인생샷 성지입니다.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">#인생샷명소</span>
+              <span class="tag">#어린왕자동상</span>
+              <span class="tag">#스탬프투어</span>
+            </div>
+
+            <div class="card-meta">
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-ko="사하구 감내2로 203" data-en="Saha-gu, Busan">사하구 감내2로 203</span>
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-train-subway"></i>
+                <span data-ko="1호선 토성역 6번 출구 + 마을버스" data-en="Line 1 Toseong Stn (Exit 6) + Bus">1호선 토성역 6번 출구 + 마을버스</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="tip-text">
+                <strong data-ko="외국인 꿀팁" data-en="Traveler Tip">외국인 꿀팁</strong>
+                <p data-ko="계단과 오르막이 많아 편한 운동화 필수! 실제 주민 거주지이므로 '정숙 관광(Silent Tourism)'을 지켜주세요."
+                   data-en="Wear comfortable walking shoes for steep stairs. Please respect local residents and observe quiet hours.">
+                  계단과 오르막이 많아 편한 운동화 필수! 실제 주민 거주지이므로 '정숙 관광(Silent Tourism)'을 지켜주세요.
+                </p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline detail-btn" data-detail="1">
+              <span data-ko="상세 정보 & 가이드" data-en="View Full Guide">상세 정보 & 가이드</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attraction Card 2: 해운대 해수욕장 & 블루라인파크 -->
+        <article class="attraction-card" data-category="ocean" data-id="2">
+          <div class="card-media">
+            <span class="rank-badge">02</span>
+            <img src="https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=800&q=80" 
+                 alt="해운대 해수욕장 & 블루라인파크" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=800&q=80';">
+            <button class="like-btn" title="찜하기" aria-label="Bookmark Haeundae Beach">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="category-tag ocean">
+              <i class="fa-solid fa-umbrella-beach"></i>
+              <span data-ko="오션 & 액티비티" data-en="Ocean & Fun">오션 & 액티비티</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-wrap">
+              <h3 class="card-title" data-ko="해운대 해수욕장 & 블루라인파크" data-en="Haeundae Beach & Blueline Park">해운대 해수욕장 & 블루라인파크</h3>
+              <span class="card-subtitle" data-ko="바다 위를 달리는 레트로 스카이캡슐" data-en="Busan's Modern Oceanfront & Sky Capsule">바다 위를 달리는 레트로 스카이캡슐</span>
+            </div>
+            <p class="card-excerpt" data-ko="부산을 대표하는 1.5km 황금빛 백사장과 함께, 옛 동해남부선 폐선 철로를 따라 바다 절경을 감상하는 공중 '스카이캡슐'과 해변열차는 외국인에게 가장 인기 있는 트렌디 체험입니다."
+               data-en="Busan's premier golden-sand beach, now world-famous for the Haeundae Blueline Park Sky Capsule—colorful vintage train pods floating along the coastal cliffs overlooking the East Sea.">
+              부산을 대표하는 1.5km 황금빛 백사장과 함께, 옛 동해남부선 폐선 철로를 따라 바다 절경을 감상하는 공중 '스카이캡슐'과 해변열차는 외국인에게 가장 인기 있는 트렌디 체험입니다.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">#스카이캡슐</span>
+              <span class="tag">#해변열차</span>
+              <span class="tag">#동백섬</span>
+              <span class="tag">#더베이101</span>
+            </div>
+
+            <div class="card-meta">
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-ko="해운대구 해운대해변로 264" data-en="Haeundae-gu, Busan">해운대구 해운대해변로 264</span>
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-train-subway"></i>
+                <span data-ko="2호선 해운대역 3·5번 출구 (도보 5분)" data-en="Line 2 Haeundae Stn (5 min walk)">2호선 해운대역 3·5번 출구 (도보 5분)</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="tip-text">
+                <strong data-ko="외국인 꿀팁" data-en="Traveler Tip">외국인 꿀팁</strong>
+                <p data-ko="스카이캡슐(미포~청사포)은 노을 지는 일몰 시간이 가장 예쁩니다. 주말 현장 매표는 조기 매진되니 온라인 사전 예약 필수!"
+                   data-en="Sunset slot for the Sky Capsule (Mipo to Cheongsapo) is magical. Book at least 1-2 weeks ahead online to avoid sold-out slots!">
+                  스카이캡슐(미포~청사포)은 노을 지는 일몰 시간이 가장 예쁩니다. 주말 현장 매표는 조기 매진되니 온라인 사전 예약 필수!
+                </p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline detail-btn" data-detail="2">
+              <span data-ko="상세 정보 & 가이드" data-en="View Full Guide">상세 정보 & 가이드</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attraction Card 3: 해동용궁사 -->
+        <article class="attraction-card" data-category="culture" data-id="3">
+          <div class="card-media">
+            <span class="rank-badge">03</span>
+            <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=800&q=80" 
+                 alt="해동용궁사" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=800&q=80';">
+            <button class="like-btn" title="찜하기" aria-label="Bookmark Haedong Yonggungsa">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="category-tag culture">
+              <i class="fa-solid fa-landmark"></i>
+              <span data-ko="문화 & 힐링" data-en="Heritage & Zen">문화 & 힐링</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-wrap">
+              <h3 class="card-title" data-ko="해동용궁사" data-en="Haedong Yonggungsa Temple">해동용궁사</h3>
+              <span class="card-subtitle" data-ko="파도치는 절벽 위의 신비로운 바다 사찰" data-en="Temple on the Edge of the Ocean">파도치는 절벽 위의 신비로운 바다 사찰</span>
+            </div>
+            <p class="card-excerpt" data-ko="산속에 있는 일반 사찰과 달리, 동해 바다 기암절벽 바로 앞에 자리 잡은 대한민국에서 가장 아름다운 사찰. 파도 소리와 은은한 목탁 소리가 만드는 영적인 분위기는 외국인에게 잊지 못할 전율을 선사합니다."
+               data-en="Unlike most Korean temples nestled deep in mountain forests, Yonggungsa is perched directly above the crashing waves. A spiritual cliffside sanctuary offering unforgettable sunrises and ocean panoramas.">
+              산속에 있는 일반 사찰과 달리, 동해 바다 기암절벽 바로 앞에 자리 잡은 대한민국에서 가장 아름다운 사찰. 파도 소리와 은은한 목탁 소리가 만드는 영적인 분위기는 외국인에게 잊지 못할 전율을 선사합니다.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">#바다사찰</span>
+              <span class="tag">#일출명소</span>
+              <span class="tag">#108돌계단</span>
+              <span class="tag">#황금불상</span>
+            </div>
+
+            <div class="card-meta">
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-ko="기장군 용궁길 86" data-en="Gijang-gun, Busan">기장군 용궁길 86</span>
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-train-subway"></i>
+                <span data-ko="동해선 오시리아역에서 버스(139번) 또는 택시 10분" data-en="Donghae Line Osiria Stn + Bus 139 / Taxi">동해선 오시리아역에서 버스(139번) 또는 택시 10분</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="tip-text">
+                <strong data-ko="외국인 꿀팁" data-en="Traveler Tip">외국인 꿀팁</strong>
+                <p data-ko="아침 일찍(오전 8~9시) 방문하면 단체 관광객 없이 고요한 바다와 장엄한 풍경을 온전히 사진에 담을 수 있습니다. 입장료는 무료!"
+                   data-en="Visit early morning (8:00–9:30 AM) to skip the crowds. Entry is completely free!">
+                  아침 일찍(오전 8~9시) 방문하면 단체 관광객 없이 고요한 바다와 장엄한 풍경을 온전히 사진에 담을 수 있습니다. 입장료는 무료!
+                </p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline detail-btn" data-detail="3">
+              <span data-ko="상세 정보 & 가이드" data-en="View Full Guide">상세 정보 & 가이드</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attraction Card 4: 광안리 해수욕장 & 광안대교 -->
+        <article class="attraction-card" data-category="night" data-id="4">
+          <div class="card-media">
+            <span class="rank-badge">04</span>
+            <img src="https://images.unsplash.com/photo-1617854818583-09e7f077a156?auto=format&fit=crop&w=800&q=80" 
+                 alt="광안리 해수욕장 & 광안대교" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd0?auto=format&fit=crop&w=800&q=80';">
+            <button class="like-btn" title="찜하기" aria-label="Bookmark Gwangalli Beach">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="category-tag night">
+              <i class="fa-solid fa-moon"></i>
+              <span data-ko="야경 & 핫플" data-en="Night & Views">야경 & 핫플</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-wrap">
+              <h3 class="card-title" data-ko="광안리 해수욕장 & 광안대교" data-en="Gwangalli Beach & Gwangan Bridge">광안리 해수욕장 & 광안대교</h3>
+              <span class="card-subtitle" data-ko="환상적인 다이아몬드 브릿지 야경과 드론쇼" data-en="Diamond Bridge Illuminations & Drone Light Show">환상적인 다이아몬드 브릿지 야경과 드론쇼</span>
+            </div>
+            <p class="card-excerpt" data-ko="바다를 가로지르는 7.4km 광안대교의 화려한 LED 조명과 오션뷰 테라스 펍, 카페가 즐비한 부산 최고의 밤거리. 매주 토요일 밤에는 바다 위 하늘을 수놓는 세계적인 드론 라이트쇼가 펼쳐집니다."
+               data-en="Famous for the dramatic Gwangan Diamond Bridge skyline, beachfront craft breweries, and the free weekly M Drone Light Show every Saturday night that illuminates the night sky.">
+              바다를 가로지르는 7.4km 광안대교의 화려한 LED 조명과 오션뷰 테라스 펍, 카페가 즐비한 부산 최고의 밤거리. 매주 토요일 밤에는 바다 위 하늘을 수놓는 세계적인 드론 라이트쇼가 펼쳐집니다.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">#광안대교야경</span>
+              <span class="tag">#토요드론쇼</span>
+              <span class="tag">#해변수제맥주</span>
+              <span class="tag">#패들보드</span>
+            </div>
+
+            <div class="card-meta">
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-ko="수영구 광안해변로 219" data-en="Suyeong-gu, Busan">수영구 광안해변로 219</span>
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-train-subway"></i>
+                <span data-ko="2호선 광안역 3·5번 출구 (도보 10분)" data-en="Line 2 Gwangan Stn (10 min walk)">2호선 광안역 3·5번 출구 (도보 10분)</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="tip-text">
+                <strong data-ko="외국인 꿀팁" data-en="Traveler Tip">외국인 꿀팁</strong>
+                <p data-ko="매주 토요일 밤 2회(동절기 19시/21시, 하절기 20시/22시) 드론쇼가 열립니다. 편의점에서 한강라면이나 캔맥주를 사서 모래사장에 앉아보는 것을 강력 추천!"
+                   data-en="Free M Drone Show takes place every Saturday night. Grab Korean convenience store snacks and craft beer for a romantic beachside picnic!">
+                  매주 토요일 밤 2회(동절기 19시/21시, 하절기 20시/22시) 드론쇼가 열립니다. 편의점에서 한강라면이나 캔맥주를 사서 모래사장에 앉아보는 것을 강력 추천!
+                </p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline detail-btn" data-detail="4">
+              <span data-ko="상세 정보 & 가이드" data-en="View Full Guide">상세 정보 & 가이드</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Attraction Card 5: 자갈치시장 & BIFF 광장 -->
+        <article class="attraction-card" data-category="food" data-id="5">
+          <div class="card-media">
+            <span class="rank-badge">05</span>
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80" 
+                 alt="자갈치시장 & BIFF 광장" 
+                 loading="lazy"
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=800&q=80';">
+            <button class="like-btn" title="찜하기" aria-label="Bookmark Jagalchi Market">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+            <div class="category-tag food">
+              <i class="fa-solid fa-utensils"></i>
+              <span data-ko="로컬 미식 & 마켓" data-en="Food & Culture">로컬 미식 & 마켓</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="card-title-wrap">
+              <h3 class="card-title" data-ko="자갈치시장 & BIFF 광장" data-en="Jagalchi Fish Market & BIFF Square">자갈치시장 & BIFF 광장</h3>
+              <span class="card-subtitle" data-ko="오이소, 보이소, 사이소! 생동감 넘치는 K-수산시장" data-en="Korea's Largest Seafood Hub & Street Food Paradise">오이소, 보이소, 사이소! 생동감 넘치는 K-수산시장</span>
+            </div>
+            <p class="card-excerpt" data-ko="대한민국 최대의 수산시장으로 수조에서 살아 숨쉬는 신선한 해산물을 골라 2층 식당에서 즉석 회로 맛볼 수 있습니다. 길 건너 BIFF광장에서는 달콤고소한 부산 명물 씨앗호떡과 떡볶이 먹방이 기다립니다."
+               data-en="South Korea's largest and liveliest seafood market. Hand-pick live fish or king crabs on floor 1 and feast on fresh sashimi on floor 2. Across the street at BIFF Square, taste legendary Korean street eats like Ssiat Hotteok.">
+              대한민국 최대의 수산시장으로 수조에서 살아 숨쉬는 신선한 해산물을 골라 2층 식당에서 즉석 회로 맛볼 수 있습니다. 길 건너 BIFF광장에서는 달콤고소한 부산 명물 씨앗호떡과 떡볶이 먹방이 기다립니다.
+            </p>
+
+            <div class="card-tags">
+              <span class="tag">#활어회체험</span>
+              <span class="tag">#씨앗호떡</span>
+              <span class="tag">#남포동먹거리</span>
+              <span class="tag">#자갈치전망대</span>
+            </div>
+
+            <div class="card-meta">
+              <div class="meta-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-ko="중구 자갈치해안로 52" data-en="Junggu, Jagalchihaean-ro, Busan">중구 자갈치해안로 52</span>
+              </div>
+              <div class="meta-item">
+                <i class="fa-solid fa-train-subway"></i>
+                <span data-ko="1호선 자갈치역 10번 출구 (도보 3분)" data-en="Line 1 Jagalchi Stn (Exit 10, 3 min walk)">1호선 자갈치역 10번 출구 (도보 3분)</span>
+              </div>
+            </div>
+
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div class="tip-text">
+                <strong data-ko="외국인 꿀팁" data-en="Traveler Tip">외국인 꿀팁</strong>
+                <p data-ko="회를 못 먹어도 생선구이 골목과 BIFF광장의 씨앗호떡·비빔당면이 풍성합니다. 자갈치 건물 7층 전망대에 오르면 부산항 바다가 무료로 시원하게 펼쳐집니다."
+                   data-en="Not a raw fish fan? Head to the grilled fish alley or try Ssiat Hotteok at BIFF Square. Don't miss the free 7th-floor observatory rooftop in the Jagalchi building!">
+                  회를 못 먹어도 생선구이 골목과 BIFF광장의 씨앗호떡·비빔당면이 풍성합니다. 자갈치 건물 7층 전망대에 오르면 부산항 바다가 무료로 시원하게 펼쳐집니다.
+                </p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline detail-btn" data-detail="5">
+              <span data-ko="상세 정보 & 가이드" data-en="View Full Guide">상세 정보 & 가이드</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Travel Itinerary Section -->
+  <section class="section itinerary-section" id="itinerary">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-subtitle" data-ko="PERFECT 2-DAY COURSE" data-en="PERFECT 2-DAY COURSE">PERFECT 2-DAY COURSE</div>
+        <h2 class="section-title" data-ko="외국인 맞춤 부산 1박 2일 황금 코스" data-en="Curated 2-Day Busan Bucket List Itinerary">외국인 맞춤 부산 1박 2일 황금 코스</h2>
+        <p class="section-desc" data-ko="동선 낭비 없이 5대 명소를 가장 효율적이고 감동적으로 즐기는 최적의 여행 루트를 제안합니다."
+           data-en="A perfectly optimized route designed to minimize transit time and maximize scenic wonders.">
+          동선 낭비 없이 5대 명소를 가장 효율적이고 감동적으로 즐기는 최적의 여행 루트를 제안합니다.
+        </p>
+      </div>
+
+      <div class="itinerary-grid">
+        <!-- Day 1 Card -->
+        <div class="itinerary-card">
+          <div class="itinerary-header">
+            <span class="day-badge">DAY 1</span>
+            <h3 data-ko="동부 바다 & 감성 힐링 데이" data-en="Eastern Coastal & Scenic Vibe">동부 바다 & 감성 힐링 데이</h3>
+            <p class="itinerary-theme" data-ko="스카이캡슐부터 바다 사찰, 그리고 환상적인 다리 야경까지" data-en="Ocean capsules, cliffside temples, and illuminated bridge night">스카이캡슐부터 바다 사찰, 그리고 환상적인 다리 야경까지</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="step-num">1</div>
+              <div class="step-info">
+                <span class="step-time">10:00 AM</span>
+                <h4 data-ko="해운대 블루라인파크 & 해변 산책" data-en="Haeundae Blueline Park & Beach">해운대 블루라인파크 & 해변 산책</h4>
+                <p data-ko="미포정거장에서 스카이캡슐을 타고 청사포 다릿돌전망대까지 에메랄드빛 바다 감상"
+                   data-en="Ride the colorful Sky Capsule from Mipo to Cheongsapo along the panoramic coast">
+                  미포정거장에서 스카이캡슐을 타고 청사포 다릿돌전망대까지 에메랄드빛 바다 감상
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">2</div>
+              <div class="step-info">
+                <span class="step-time">02:00 PM</span>
+                <h4 data-ko="해동용궁사 사찰 힐링" data-en="Haedong Yonggungsa Temple">해동용궁사 사찰 힐링</h4>
+                <p data-ko="탁 트인 기암절벽 위에 울려 퍼지는 파도 소리와 함께 소원 빌기 및 인생 사진 촬영"
+                   data-en="Listen to crashing waves against coastal rocks at Korea's unique seaside temple">
+                  탁 트인 기암절벽 위에 울려 퍼지는 파도 소리와 함께 소원 빌기 및 인생 사진 촬영
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">3</div>
+              <div class="step-info">
+                <span class="step-time">06:30 PM</span>
+                <h4 data-ko="광안리 해수욕장 야경 & 테라스 맥주" data-en="Gwangalli Beach Night & Craft Beer">광안리 해수욕장 야경 & 테라스 맥주</h4>
+                <p data-ko="빛나는 광안대교 뷰를 바라보며 해변가 펍에서 수제 맥주와 토요일 드론 라이트쇼 관람"
+                   data-en="Chill at seaside craft beer pubs and watch the illuminated bridge and Saturday drone show">
+                  빛나는 광안대교 뷰를 바라보며 해변가 펍에서 수제 맥주와 토요일 드론 라이트쇼 관람
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Day 2 Card -->
+        <div class="itinerary-card">
+          <div class="itinerary-header">
+            <span class="day-badge alt">DAY 2</span>
+            <h3 data-ko="원도심 감성 문화 & K-미식 데이" data-en="Historic Downtown & K-Street Food">원도심 감성 문화 & K-미식 데이</h3>
+            <p class="itinerary-theme" data-ko="알록달록 산토리니 골목길과 에너지 넘치는 전통시장 투어" data-en="Rainbow village alleys and dynamic seafood street food culture">알록달록 산토리니 골목길과 에너지 넘치는 전통시장 투어</p>
+          </div>
+          <div class="timeline">
+            <div class="timeline-step">
+              <div class="step-num">1</div>
+              <div class="step-info">
+                <span class="step-time">10:00 AM</span>
+                <h4 data-ko="감천문화마을 골목 탐방" data-en="Gamcheon Culture Village Exploration">감천문화마을 골목 탐방</h4>
+                <p data-ko="어린 왕자와 기념사진을 남기고 미로 같은 골목길 사이 아기자기한 갤러리와 카페 탐방"
+                   data-en="Take photos with the Little Prince and explore labyrinth art alleys and cute craft shops">
+                  어린 왕자와 기념사진을 남기고 미로 같은 골목길 사이 아기자기한 갤러리와 카페 탐방
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">2</div>
+              <div class="step-info">
+                <span class="step-time">01:30 PM</span>
+                <h4 data-ko="자갈치시장 생선회 & 씨앗호떡 먹방" data-en="Jagalchi Seafood & BIFF Street Eats">자갈치시장 생선회 & 씨앗호떡 먹방</h4>
+                <p data-ko="살아있는 신선한 해산물 만찬을 즐기고, BIFF광장에서 바삭하고 달콤한 씨앗호떡 디저트"
+                   data-en="Feast on fresh sashimi or grilled fish, followed by legendary seed pancakes (Ssiat Hotteok)">
+                  살아있는 신선한 해산물 만찬을 즐기고, BIFF광장에서 바삭하고 달콤한 씨앗호떡 디저트
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-step">
+              <div class="step-num">3</div>
+              <div class="step-info">
+                <span class="step-time">04:30 PM</span>
+                <h4 data-ko="용두산공원 부산타워 전망대" data-en="Busan Tower & Nampo Shopping">용두산공원 부산타워 전망대</h4>
+                <p data-ko="부산 원도심 전경을 360도로 조망하고 남포동 거리에서 기념품 쇼핑으로 여정 마무리"
+                   data-en="Admire panoramic sunset views of the harbor and finish with souvenir shopping in Nampo-dong">
+                  부산 원도심 전경을 360도로 조망하고 남포동 거리에서 기념품 쇼핑으로 여정 마무리
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Essential Tips for Foreigners -->
+  <section class="section tips-section" id="tips">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-subtitle" data-ko="ESSENTIAL TIPS" data-en="ESSENTIAL TIPS">ESSENTIAL TIPS</div>
+        <h2 class="section-title" data-ko="외국인 여행자를 위한 부산 필수 꿀팁" data-en="Essential Travel Hacks for Busan Visitors">외국인 여행자를 위한 부산 필수 꿀팁</h2>
+        <p class="section-desc" data-ko="한국이 처음인 외국인 친구도 바로 써먹을 수 있는 알짜배기 교통·통역·결제 안내입니다."
+           data-en="Must-know survival advice regarding navigation, transit passes, cashless payments, and 24/7 help lines.">
+          한국이 처음인 외국인 친구도 바로 써먹을 수 있는 알짜배기 교통·통역·결제 안내입니다.
+        </p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-card-icon"><i class="fa-solid fa-map-location"></i></div>
+          <h4 data-ko="네이버 지도 / 카카오맵 필수" data-en="Naver Map & KakaoMap">네이버 지도 / 카카오맵 필수</h4>
+          <p data-ko="한국에서는 국내 지도 데이터 규제로 인해 구글 지도 도보 길찾기가 원활하지 않습니다. 영어가 지원되는 Naver Map 앱을 미리 다운로드하세요."
+             data-en="Google Maps has limited walking directions in Korea. Download Naver Map or KakaoMap with English interface for accurate routing.">
+            한국에서는 국내 지도 데이터 규제로 인해 구글 지도 도보 길찾기가 원활하지 않습니다. 영어가 지원되는 Naver Map 앱을 미리 다운로드하세요.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card-icon"><i class="fa-solid fa-ticket"></i></div>
+          <h4 data-ko="비지트 부산 패스 (Visit Busan Pass)" data-en="Visit Busan Pass">비지트 부산 패스 (Visit Busan Pass)</h4>
+          <p data-ko="외국인 전용 관광 패스로, 블루라인파크·부산타워·엑스더스카이 등 30여 개 주요 명소 무료입장 및 대중교통 충전 카드로 활용 가능합니다."
+             data-en="Exclusive pass for foreign tourists offering free entry to 30+ top attractions including Sky Capsule discounts and pre-loaded transit benefits.">
+            외국인 전용 관광 패스로, 블루라인파크·부산타워·엑스더스카이 등 30여 개 주요 명소 무료입장 및 대중교통 충전 카드로 활용 가능합니다.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h4 data-ko="티머니 카드 & 카드 결제" data-en="T-Money & Credit Cards">티머니 카드 & 카드 결제</h4>
+          <p data-ko="편의점에서 티머니(T-Money) 카드를 구입해 현금으로 충전하면 지하철과 버스를 편하게 환승할 수 있으며, 대부분의 상점은 해외 신용카드가 통용됩니다."
+             data-en="Buy a rechargeable T-Money transportation card at any convenience store. Visa and Mastercard are accepted at virtually all shops and restaurants.">
+            편의점에서 티머니(T-Money) 카드를 구입해 현금으로 충전하면 지하철과 버스를 편하게 환승할 수 있으며, 대부분의 상점은 해외 신용카드가 통용됩니다.
+          </p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-card-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4 data-ko="24시간 관광통역안내 1330" data-en="24/7 Tourism Hotline 1330">24시간 관광통역안내 1330</h4>
+          <p data-ko="한국관광공사에서 운영하는 무료 콜센터(국번없이 1330)로 영어, 중국어, 일본어로 24시간 길 안내, 통역 지원, 관광지 정보를 친절히 도와줍니다."
+             data-en="Dial 1330 (free 24/7 hotline by Korea Tourism Organization) for instant English assistance, translation help, and travel emergencies.">
+            한국관광공사에서 운영하는 무료 콜센터(국번없이 1330)로 영어, 중국어, 일본어로 24시간 길 안내, 통역 지원, 관광지 정보를 친절히 도와줍니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map / Location Overview Section -->
+  <section class="section map-section" id="map-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-subtitle" data-ko="GEOGRAPHY OF BUSAN" data-en="GEOGRAPHY OF BUSAN">GEOGRAPHY OF BUSAN</div>
+        <h2 class="section-title" data-ko="5대 명소 위치 한눈에 보기" data-en="Interactive Location Overview">5대 명소 위치 한눈에 보기</h2>
+        <p class="section-desc" data-ko="부산은 크게 서부(원도심/문화)와 동부(해변/휴양)로 나뉩니다. 지도의 핀을 클릭해 명소를 빠르게 확인하세요."
+           data-en="Busan is split into Western Downtown (Culture & Markets) and Eastern Coastlines (Beaches & Temples). Click pins to preview!">
+          부산은 크게 서부(원도심/문화)와 동부(해변/휴양)로 나뉩니다. 지도의 핀을 클릭해 명소를 빠르게 확인하세요.
+        </p>
+      </div>
+
+      <div class="interactive-map-card">
+        <!-- Visual Schematic Map -->
+        <div class="schematic-map">
+          <!-- Coastline Background Graphic -->
+          <svg class="map-bg-svg" viewBox="0 0 1000 450" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="var(--ocean-light)" />
+                <stop offset="100%" stop-color="var(--ocean-deep)" />
+              </linearGradient>
+            </defs>
+            <path d="M 0,380 Q 250,330 500,370 T 1000,280 L 1000,450 L 0,450 Z" fill="url(#oceanGrad)" opacity="0.15"></path>
+            <!-- Subway line 2 stylized representation -->
+            <path d="M 120,290 C 280,310 400,210 630,220 C 760,220 840,160 920,130" fill="none" stroke="var(--subway-green)" stroke-width="4" stroke-dasharray="8,6" opacity="0.5"></path>
+          </svg>
+
+          <!-- Zone Indicators -->
+          <div class="zone-label west-zone" data-ko="서부 원도심 라인 (문화/시장)" data-en="West Area (Culture & Market)">서부 원도심 라인 (문화/시장)</div>
+          <div class="zone-label east-zone" data-ko="동부 오션 라인 (해변/사찰)" data-en="East Ocean Line (Beaches & Temple)">동부 오션 라인 (해변/사찰)</div>
+
+          <!-- Pin 1: 감천문화마을 -->
+          <div class="map-pin pin-1" data-target="1" style="left: 15%; top: 62%;">
+            <div class="pin-marker"><i class="fa-solid fa-palette"></i></div>
+            <div class="pin-tooltip">
+              <strong>#1 감천문화마을</strong>
+              <span>Gamcheon Culture Village</span>
+            </div>
+          </div>
+
+          <!-- Pin 5: 자갈치시장 -->
+          <div class="map-pin pin-5" data-target="5" style="left: 28%; top: 70%;">
+            <div class="pin-marker"><i class="fa-solid fa-fish"></i></div>
+            <div class="pin-tooltip">
+              <strong>#5 자갈치시장 & BIFF</strong>
+              <span>Jagalchi Market & BIFF</span>
+            </div>
+          </div>
+
+          <!-- Pin 4: 광안리 해수욕장 -->
+          <div class="map-pin pin-4" data-target="4" style="left: 58%; top: 48%;">
+            <div class="pin-marker"><i class="fa-solid fa-bridge-water"></i></div>
+            <div class="pin-tooltip">
+              <strong>#4 광안리 & 광안대교</strong>
+              <span>Gwangalli Beach</span>
+            </div>
+          </div>
+
+          <!-- Pin 2: 해운대 해수욕장 -->
+          <div class="map-pin pin-2" data-target="2" style="left: 76%; top: 40%;">
+            <div class="pin-marker"><i class="fa-solid fa-train"></i></div>
+            <div class="pin-tooltip">
+              <strong>#2 해운대 & 블루라인</strong>
+              <span>Haeundae & Blueline Park</span>
+            </div>
+          </div>
+
+          <!-- Pin 3: 해동용궁사 -->
+          <div class="map-pin pin-3" data-target="3" style="left: 90%; top: 25%;">
+            <div class="pin-marker"><i class="fa-solid fa-torii-gate"></i></div>
+            <div class="pin-tooltip">
+              <strong>#3 해동용궁사</strong>
+              <span>Haedong Yonggungsa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-legend">
+          <div class="legend-item">
+            <span class="legend-color west"></span>
+            <span data-ko="1호선 인근: 감천문화마을, 자갈치시장" data-en="Line 1 Region: Gamcheon, Jagalchi">1호선 인근: 감천문화마을, 자갈치시장</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-color east"></span>
+            <span data-ko="2호선·동해선 인근: 광안리, 해운대, 해동용궁사" data-en="Line 2 Region: Gwangalli, Haeundae, Yonggungsa">2호선·동해선 인근: 광안리, 해운대, 해동용궁사</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Modal -->
+  <div class="modal-backdrop" id="detailModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalCloseBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" id="modalContent">
+        <!-- Dynamically injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmarks Drawer Modal -->
+  <div class="modal-backdrop" id="bookmarkModal">
+    <div class="modal-container bookmark-dialog">
+      <div class="bookmark-header">
+        <h3><i class="fa-solid fa-heart"></i> <span data-ko="내가 찜한 부산 명소" data-en="My Saved Busan Spots">내가 찜한 부산 명소</span></h3>
+        <button class="modal-close" id="bookmarkCloseBtn" aria-label="Close bookmarks">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="bookmark-body" id="bookmarkList">
+        <!-- Dynamically injected -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <i class="fa-solid fa-water"></i>
+          <span>BUSAN<strong>VIBES</strong></span>
+        </div>
+        <p class="footer-tagline" data-ko="외국인 여행자를 위한 가장 친절한 부산 가이드북" data-en="The most welcoming Busan travel guide for international visitors.">
+          외국인 여행자를 위한 가장 친절한 부산 가이드북
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h5 data-ko="공식 유용한 링크" data-en="Helpful Links">공식 유용한 링크</h5>
+        <ul>
+          <li><a href="https://www.visitbusan.net" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-ko="비지트부산 공식 관광포털" data-en="Visit Busan Official Portal">비지트부산 공식 관광포털</span></a></li>
+          <li><a href="https://www.visitbusanpass.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-ko="비지트 부산 패스 신청" data-en="Visit Busan Pass Official">비지트 부산 패스 신청</span></a></li>
+          <li><a href="https://english.visitkorea.or.kr" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-ko="한국관광공사 (1330)" data-en="Korea Tourism Org (1330)">한국관광공사 (1330)</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© 2026 BUSAN VIBES. Designed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i> for Global Travelers in Busan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Scroll To Top Button -->
+  <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>
